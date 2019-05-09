@@ -196,7 +196,9 @@ DLL::~DLL()
 
 }
 
-
+/*******************************************************************************
+** Description:  Reads in a txt file and creates a linked list
+*******************************************************************************/
 
 void DLL::useTxtFile()
 {
@@ -204,6 +206,7 @@ void DLL::useTxtFile()
 
 	inputFile.open("note.txt"); 
 
+	//If there was an error
 	if (!inputFile)
 	{
 		std::cout << "\nThere was an error opening the file.\n"; 
@@ -212,15 +215,17 @@ void DLL::useTxtFile()
 	{
 		
 		int num = 0; 
-		
+		//reads in the file
 		while (inputFile >> num)
 		{
+			//If there is only one number
 			if (head == NULL)
 			{
 				head = new node(num);
 				setNodeHead(head); 
 				setNodeTail(head); 
 			}
+			//reads the restof the file 
 			else
 			{
 				node *ptr = head; 
@@ -235,16 +240,17 @@ void DLL::useTxtFile()
 			
 		}
 		
-		
-		
 		inputFile.close(); 
-		//setNodeTail(ptr->next);
+	
 	}
 	
 
 }
 
 
+/*******************************************************************************
+** Description:  Takes in a node pointer and sets the head
+*******************************************************************************/
 void DLL::setNodeHead(node* i)
 {
 	if (i != NULL)
@@ -253,7 +259,9 @@ void DLL::setNodeHead(node* i)
 	}
 }
 
-
+/*******************************************************************************
+** Description:  Takes in a node pointer and sets the tail
+*******************************************************************************/
 void DLL::setNodeTail(node* i)
 {
 	if (i != NULL)
