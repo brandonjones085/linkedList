@@ -6,6 +6,9 @@
 
 
 #include "DLL.h"
+#include <fstream>
+#include <iostream>
+#include <string>
 
 DLL::DLL()
 {
@@ -192,6 +195,55 @@ DLL::~DLL()
 	}
 
 }
+
+
+
+void DLL::useTxtFile()
+{
+	std::ifstream inputFile; 
+
+	inputFile.open("note.txt"); 
+
+	if (!inputFile)
+	{
+		std::cout << "\nThere was an error opening the file.\n"; 
+	}
+	else
+	{
+		
+		int num = 0; 
+		
+		while (inputFile >> num)
+		{
+			if (head == NULL)
+			{
+				head = new node(num);
+				setNodeHead(head); 
+				setNodeTail(head); 
+			}
+			else
+			{
+				node *ptr = head; 
+				while (ptr->next != NULL)
+				{
+					ptr = ptr->next; 
+				}
+				ptr->next = new node(num); 
+				setNodeTail(ptr->next); 
+			}
+
+			
+		}
+		
+		
+		
+		inputFile.close(); 
+		//setNodeTail(ptr->next);
+	}
+	
+
+}
+
 
 void DLL::setNodeHead(node* i)
 {

@@ -1,7 +1,7 @@
 /*******************************************************************************
 ** Author:       Brandon Jones
-** Date:         04/24/2019
-** Description:  The main file to run the program
+** Date:         05/07/2019
+** Description:  The menu function returns in int from the user which is used to run the program
 *******************************************************************************/
 
 
@@ -18,7 +18,8 @@ int menu()
 	std::cout << "3. Delete the first node in the list\n";
 	std::cout << "4. Delete the last node in the list\n";
 	std::cout << "5. Traverse the list reversely\n";
-	std::cout << "6. Exit\n\n";
+	std::cout << "6. Create list from txt file\n";
+	std::cout << "7. Exit\n\n";
 
 	std::cin >> choice; 
 	validateMenu(choice); 

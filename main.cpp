@@ -20,7 +20,7 @@ int main()
 
 	int num = menu(); 
 
-	while (num != 6) {
+	while (num != 7) {
 
 		if (num == 1)
 		{
@@ -87,6 +87,16 @@ int main()
 
 			d.printNodesRev(); 
 			num = menu();
+		}
+		else if (num == 6)
+		{
+			//reads from txt file
+			d.useTxtFile(); 
+			d.printNodes(); 
+
+			std::cout << "\n\nThe node head is " << d.getNodeHead() << std::endl;
+			std::cout << "The node tail is " << d.getNodeTail();
+			num = menu(); 
 		}
 
 	}

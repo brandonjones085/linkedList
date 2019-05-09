@@ -34,6 +34,7 @@ public:
 	void setNodeHead(node*); 
 	int getNodeHead(); 
 	void revHead(node*); 
+	void useTxtFile(); 
 	~DLL();
 };
 
