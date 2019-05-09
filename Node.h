@@ -1,11 +1,11 @@
 /*******************************************************************************
 ** Author:       Brandon Jones
-** Date:         04/24/2019
-** Description:  The main file to run the program
+** Date:         05/07/2019
+** Description:  The header file for the Node class
 *******************************************************************************/
 
-#ifndef NODE_H
-#define NODE_H
+#ifndef NODE_HPP
+#define NODE_HPP
 
 #include <iostream>
 class Node
@@ -21,9 +21,6 @@ protected:
 			val = in; 
 		};
 	};
-	
-
-
 
 };
 

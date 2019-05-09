@@ -24,6 +24,8 @@ void DLL::addNodeTail(int input)
 	if (head == NULL)
 	{
 		head = new node(input);
+		setNodeHead(head);
+		setNodeTail(head);
 	}
 	else
 	{
@@ -34,7 +36,11 @@ void DLL::addNodeTail(int input)
 
 		}
 		ptr->next = new node(input); 
+
+		setNodeTail(ptr->next);
 	}
+
+	
 }
 
 
@@ -55,6 +61,14 @@ void DLL::addNodeHead(int input)
 		temp->next = head; 
 		head = temp; 
 	}
+
+	setNodeHead(head); 
+
+	if (tail == NULL)
+	{
+		setNodeTail(head);
+	}
+
 }
 
 
@@ -74,7 +88,10 @@ void DLL::delNodeHead()
 		node *temp = head->next;
 		delete head;
 		head = temp;
+		setNodeHead(head);
 	}
+
+
 }
 
 /*******************************************************************************
@@ -95,6 +112,10 @@ void DLL::delNodeTail()
 		node *temp = head; 
 		delete temp; 
 		head = NULL; 
+		tail = NULL;
+		setNodeHead(head); 
+		setNodeTail(tail); 
+
 	}
 	else
 	{
@@ -106,7 +127,11 @@ void DLL::delNodeTail()
 			temp1 = temp1->next; 
 		}
 		temp1->next = NULL; 
+
+		setNodeTail(temp1);
 		delete temp2; 
+
+		
 	}
 
 }
@@ -166,4 +191,31 @@ DLL::~DLL()
 		temp = next; 
 	}
 
+}
+
+void DLL::setNodeHead(node* i)
+{
+	if (i != NULL)
+	{
+		head = i; 
+	}
+}
+
+
+void DLL::setNodeTail(node* i)
+{
+	if (i != NULL)
+	{
+		tail = i; 
+	}
+}
+
+int DLL::getNodeHead()
+{
+	return head->val; 
+}
+
+int DLL::getNodeTail()
+{
+	return tail->val; 
 }

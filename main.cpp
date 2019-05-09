@@ -1,6 +1,6 @@
 /*******************************************************************************
 ** Author:       Brandon Jones
-** Date:         04/24/2019
+** Date:         05/07/2019
 ** Description:  The main file to run the program
 *******************************************************************************/
 
@@ -9,8 +9,6 @@
 #include "menu.h"
 #include <cstdlib>
 #include <iostream>
-
-
 
 
 int main()
@@ -29,11 +27,16 @@ int main()
 
 			int in;
 			//add to tail
+
 			std::cout << "\nWhat number would you like to add: ";
 			std::cin >> in;
+
 			//add to head
 			d.addNodeHead(in);
 			d.printNodes();
+
+			std::cout << "\n\nThe node head is " << d.getNodeHead() << std::endl;
+			std::cout << "The node tail is "  << d.getNodeTail(); 
 
 			num = menu(); 
 
@@ -41,13 +44,16 @@ int main()
 		else if (num == 2)
 		{
 			int in;
+
 			//add to tail
 			std::cout << "\nWhat number would you like to add: ";
 			std::cin >> in;
 
-
 			d.addNodeTail(in);
 			d.printNodes();
+
+			std::cout << "\n\nThe node head is " << d.getNodeHead() << std::endl;
+			std::cout << "The node tail is " << d.getNodeTail();
 
 			num = menu();
 		}
@@ -58,6 +64,9 @@ int main()
 			d.delNodeHead(); 
 			d.printNodes();
 
+			std::cout << "\n\nThe node head is " << d.getNodeHead() << std::endl;
+			std::cout << "The node tail is " << d.getNodeTail();
+
 			num = menu();
 
 		}
@@ -66,6 +75,9 @@ int main()
 			//del last node
 			d.delNodeTail(); 
 			d.printNodes();
+
+			std::cout << "\n\nThe node head is " << d.getNodeHead() << std::endl;
+			std::cout << "The node tail is " << d.getNodeTail();
 
 			num = menu();
 		}
@@ -76,8 +88,6 @@ int main()
 			d.printNodesRev(); 
 			num = menu();
 		}
-
-
 
 	}
 
